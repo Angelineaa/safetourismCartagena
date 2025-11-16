@@ -1,0 +1,43 @@
+pluginManagement {
+    plugins {
+        id "org.jetbrains.kotlin.android" version "2.1.0"
+    }
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    def flutterSdkPath = null
+    def localPropertiesFile = new File(rootDir, "local.properties")
+    if (localPropertiesFile.exists()) {
+        Properties props = new Properties()
+        localPropertiesFile.withReader("UTF-8") { reader ->
+            props.load(reader)
+        }
+        flutterSdkPath = props.getProperty("flutter.sdk")
+    }
+    if (flutterSdkPath == null) {
+        throw new RuntimeException("flutter.sdk not set in local.properties")
+    }
+    includeBuild("${flutterSdkPath}/packages/flutter_tools/gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://storage.googleapis.com/download.flutter.io" }
+    }
+}
+
+rootProject.name = "android"
+include(":app")

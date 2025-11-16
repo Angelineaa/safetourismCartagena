@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326339524473",
+    "project_id": "safe-tourism-cartagena",
+    "storage_bucket": "safe-tourism-cartagena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326339524473:android:46699e0e22ca174e0c61a8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326339524473-9s5tsthj2e6iacf7867e37tikoevllju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNsY1tB0O-EoGlhIB9lqrMvr4tcE44Ik8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326339524473-9s5tsthj2e6iacf7867e37tikoevllju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

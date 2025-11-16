@@ -1,0 +1,52 @@
+
+plugins {
+    id "com.android.application"
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "com.example.flutter_application_1"
+    compileSdk = 34
+
+   defaultConfig {
+        applicationId "com.example.flutter_application_1"
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        release {
+            if (project.hasProperty("safetourism_key")) {
+                keyAlias keystoreProperties["safetourism_key"]
+                keyPassword keystoreProperties["safetourism1008"]
+                storeFile file(keystoreProperties["safetourism-release.jks"])
+                storePassword keystoreProperties["safetourism1008"]
+            }
+        }
+    }
+
+   buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.1.0"
+}
+
+repositories {  
+    google()
+    mavenCentral()
+}
