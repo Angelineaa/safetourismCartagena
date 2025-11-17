@@ -316,11 +316,6 @@ class _UsersManagementScreenState extends State<UsersManagementScreen> {
                             tooltip: blocked ? 'Unblock user' : 'Block user',
                             onPressed: () => _blockUserFlow(d.id, data, !blocked),
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.shield, color: Colors.orange),
-                            tooltip: 'Disable low-rated services',
-                            onPressed: () => _autoBlockServicesByRating(d.id),
-                          ),
                         ],
                       ),
                       onTap: () {
